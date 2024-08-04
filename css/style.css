@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #ffffff;
+  color: #000;
+  min-height: 100vh;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+header {
+  background: #eaecf1;
+  padding: 10px 20px;
+}
+header nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+header nav ul li {
+  list-style: none;
+}
+header nav ul li b {
+  font-weight: 700;
+}
+
+.result {
+  position: relative;
+  background-color: #eaecf1;
+  padding: 20px;
+  height: calc(100vh - 96px);
+  overflow-y: scroll;
+}
+.result .nofiledetected {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.result .nofiledetected svg {
+  width: 128px;
+  height: 128px;
+}
+.result pre {
+  font-size: 14px;
+  overflow-x: auto;
+  width: 100%;
+  height: 100%;
+}
+.result pre p {
+  margin: 9px 0;
+}
+.result pre p span.httpcode.blue {
+  background-color: #268bd2;
+  color: #ffffff;
+}
+.result pre p span.httpcode.red {
+  background-color: #dc322f;
+  color: #ffffff;
+}
+.result pre p span.httpcode.green {
+  background-color: #859900;
+  color: #ffffff;
+}
+.result pre p span.httpcode.yellow {
+  background-color: #b58900;
+  color: #ffffff;
+}
+.result pre p span.httpcode.purple {
+  background-color: #d33682;
+  color: #ffffff;
+}
+
+.history {
+  background-color: #f8f9fc;
+  padding: 12px;
+}
+.history > #historyLogs {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2px;
+}
+.history > #historyLogs a {
+  flex: 1;
+}
+.history > #historyLogs div {
+  background-color: #212839;
+  height: 30px;
+  transition: 0.1s;
+}
+.history > #historyLogs div.blue {
+  background-color: #268bd2;
+}
+.history > #historyLogs div.red {
+  background-color: #dc322f;
+}
+.history > #historyLogs div.green {
+  background-color: #859900;
+}
+.history > #historyLogs div.yellow {
+  background-color: #b58900;
+}
+.history > #historyLogs div.purple {
+  background-color: #d33682;
+}
+.history > #historyLogs div:hover {
+  transform: scale(1.1) translateY(2px);
+  cursor: pointer;
+}
+.history .informationLogs {
+  background-color: #ffffff;
+  color: #000;
+  position: absolute;
+  top: 100px;
+  z-index: 999;
+  max-width: 50%;
+  transition: 1s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.history .informationLogs ul {
+  padding: 10px;
+  padding-left: 0;
+  list-style: none;
+  position: relative;
+  transition: 1s;
+}
+.history .informationLogs ul li {
+  padding: 5px 10px;
+}
+.history .informationLogs ul li a {
+  color: #268bd2;
+}
+.history .informationLogs ul li a:hover {
+  opacity: 0.7;
+}
+.history .informationLogs ul li span {
+  color: #555;
+}
+.history .informationLogs ul li span.blue {
+  background-color: #268bd2;
+  color: #ffffff;
+}
+.history .informationLogs ul li span.red {
+  background-color: #dc322f;
+  color: #ffffff;
+}
+.history .informationLogs ul li span.green {
+  background-color: #859900;
+  color: #ffffff;
+}
+.history .informationLogs ul li span.yellow {
+  background-color: #b58900;
+  color: #ffffff;
+}
+.history .informationLogs ul li span.purple {
+  background-color: #d33682;
+  color: #ffffff;
+}
+.history .informationLogs ul li span.data {
+  color: #859900;
+}
+.history .informationLogs .type {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  background-color: #212839;
+  border-radius: 12px 12px 12px 100px;
+}
+.history .informationLogs .type.blue {
+  background-color: #268bd2;
+}
+.history .informationLogs .type.red {
+  background-color: #dc322f;
+}
+.history .informationLogs .type.green {
+  background-color: #859900;
+}
+.history .informationLogs .type.yellow {
+  background-color: #b58900;
+}
+.history .informationLogs .type.purple {
+  background-color: #d33682;
+}/*# sourceMappingURL=style.css.map */

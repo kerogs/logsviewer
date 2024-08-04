@@ -1,0 +1,49 @@
+[200] [a1b2c3d4e5f6] 2024-08-04 18:05:12.000000 192.168.1.1 [INFO] user_login [HTTP] [http://localhost/login] (http://localhost/dashboard) GET {"data":{"username":"alice","password":"pass123"}}
+[404] [b2c3d4e5f6a1] 2024-08-04 18:05:15.000000 192.168.1.2 [ERROR] page_not_found [HTTP] [http://localhost/unknownpage] - GET -
+[102] [c3d4e5f6a1b2] 2024-08-04 18:05:20.000000 192.168.1.3 [NOTE] processing [HTTP] [http://localhost/server-error] (-) POST {"data":{"action":"submit","details":"some details"}}
+[200] [d4e5f6a1b2c3] 2024-08-04 18:05:22.000000 192.168.1.4 [INFO] data_update [HTTP] [http://localhost/update] (http://localhost/dashboard) PUT {"data":{"id":1,"value":"newValue"}}
+[403] [e5f6a1b2c3d4] 2024-08-04 18:05:25.000000 192.168.1.5 [ERROR] forbidden_access [HTTP] [http://localhost/forbidden] (-) GET -
+[200] [f6a1b2c3d4e5] 2024-08-04 18:05:30.000000 192.168.1.6 [INFO] user_profile [HTTP] [http://localhost/profile?user=john] (http://localhost/profile) GET {"data":{"user":"john"}}
+[200] [a1b2c3d4e5f7] 2024-08-04 18:05:35.000000 192.168.1.7 [INFO] logout [HTTP] [http://localhost/logout] (http://localhost/home) POST -
+[404] [b2c3d4e5f7a1] 2024-08-04 18:05:40.000000 192.168.1.8 [ERROR] not_found [HTTP] [http://localhost/invalid-url] - GET -
+[500] [c3d4e5f7a1b2] 2024-08-04 18:05:45.000000 192.168.1.9 [ERROR] application_error [HTTP] [http://localhost/error] (-) PUT {"data":{"error":"database down"}}
+[200] [d4e5f7a1b2c4] 2024-08-04 18:05:50.000000 192.168.1.10 [INFO] search_results [HTTP] [http://localhost/search?q=php] (http://localhost/search) GET {"data":{"query":"php"}}
+[200] [e5f7a1b2c4d5] 2024-08-04 18:05:55.000000 192.168.1.11 [INFO] contact_form [HTTP] [http://localhost/contact] - POST {"data":{"name":"Bob","message":"Hello!"}}
+[401] [f7a1b2c4d5e6] 2024-08-04 18:06:00.000000 192.168.1.12 [ERROR] unauthorized [HTTP] [http://localhost/secure] (-) GET -
+[200] [a1b2c4d5e6f7] 2024-08-04 18:06:05.000000 192.168.1.13 [INFO] file_upload [HTTP] [http://localhost/upload] (http://localhost/dashboard) POST {"data":{"filename":"testfile.txt"}}
+[404] [b2c4d5e6f7a1] 2024-08-04 18:06:10.000000 192.168.1.14 [ERROR] resource_not_found [HTTP] [http://localhost/resource] - GET -
+[500] [c4d5e6f7a1b2] 2024-08-04 18:06:15.000000 192.168.1.15 [ERROR] critical_error [HTTP] [http://localhost/critical] (-) DELETE {"data":{"id":123}}
+[200] [d5e6f7a1b2c3] 2024-08-04 18:06:20.000000 192.168.1.16 [INFO] account_update [HTTP] [http://localhost/account] (http://localhost/dashboard) PUT {"data":{"username":"mary","email":"mary@example.com"}}
+[200] [e6f7a1b2c3d4] 2024-08-04 18:06:25.000000 192.168.1.17 [INFO] admin_panel [HTTP] [http://localhost/admin] - GET -
+[403] [f7a1b2c3d4e5] 2024-08-04 18:06:30.000000 192.168.1.18 [ERROR] forbidden_action [HTTP] [http://localhost/admin/settings] (-) GET -
+[200] [a2b3c4d5e6f8] 2024-08-04 18:06:35.000000 192.168.1.19 [INFO] payment [HTTP] [http://localhost/payment] (http://localhost/orders) POST {"data":{"amount":150.00,"currency":"USD"}}
+[500] [b3c4d5e6f8a1] 2024-08-04 18:06:40.000000 192.168.1.20 [ERROR] transaction_error [HTTP] [http://localhost/payment] (-) POST {"data":{"amount":150.00,"currency":"USD","error":"transaction failed"}}
+[200] [c4d5e6f8a2b3] 2024-08-04 18:06:45.000000 192.168.1.21 [INFO] user_registration [HTTP] [http://localhost/register] (http://localhost/login) POST {"data":{"username":"newuser","password":"securepass"}}
+[404] [d5e6f8a2b4c5] 2024-08-04 18:06:50.000000 192.168.1.22 [ERROR] not_found [HTTP] [http://localhost/nonexistent] - GET -
+[200] [e6f8a2b4c5d6] 2024-08-04 18:06:55.000000 192.168.1.23 [INFO] profile_update [HTTP] [http://localhost/profile/update] (http://localhost/profile) PUT {"data":{"bio":"Updated bio","location":"New York"}}
+[401] [f8a2b4c5d6e7] 2024-08-04 18:07:00.000000 192.168.1.24 [ERROR] access_denied [HTTP] [http://localhost/private] (-) GET -
+[200] [a3b4c5d6e7f8] 2024-08-04 18:07:05.000000 192.168.1.25 [INFO] data_export [HTTP] [http://localhost/export] - GET {"data":{"format":"csv"}}
+[404] [b4c5d6e7f8a9] 2024-08-04 18:07:10.000000 192.168.1.26 [ERROR] page_not_found [HTTP] [http://localhost/missing] - GET -
+[200] [c5d6e7f8a9b0] 2024-08-04 18:07:15.000000 192.168.1.27 [INFO] notification [HTTP] [http://localhost/notifications] - GET {"data":{"type":"alert","message":"Update available"}}
+[200] [d6e7f8a9b0c1] 2024-08-04 18:07:20.000000 192.168.1.28 [INFO] feedback [HTTP] [http://localhost/feedback] - POST {"data":{"feedback":"Great service!"}}
+[500] [e7f8a9b0c2d3] 2024-08-04 18:07:25.000000 192.168.1.29 [ERROR] server_issue [HTTP] [http://localhost/server] (-) PUT {"data":{"status":"maintenance"}}
+[200] [f8a9b0c2d3e4] 2024-08-04 18:07:30.000000 192.168.1.30 [INFO] chat_message [HTTP] [http://localhost/chat] - POST {"data":{"message":"Hello, how can I help you?"}}
+[404] [a4b5c6d7e8f9] 2024-08-04 18:07:35.000000 192.168.1.31 [ERROR] not_found [HTTP] [http://localhost/wrong] - GET -
+[200] [b5c6d7e9f0a1] 2024-08-04 18:07:40.000000 192.168.1.32 [INFO] subscription [HTTP] [http://localhost/subscribe] - POST {"data":{"plan":"premium"}}
+[500] [c6d7e9f0a1b2] 2024-08-04 18:07:45.000000 192.168.1.33 [ERROR] subscription_error [HTTP] [http://localhost/subscribe] (-) POST {"data":{"plan":"premium","error":"already subscribed"}}
+[200] [d7e9f0a1b2c3] 2024-08-04 18:07:50.000000 192.168.1.34 [INFO] cart_update [HTTP] [http://localhost/cart] - PUT {"data":{"item":"book","quantity":2}}
+[200] [e9f0a1b2c3d4] 2024-08-04 18:07:55.000000 192.168.1.35 [INFO] order_confirmation [HTTP] [http://localhost/order/123] (http://localhost/orders) GET {"data":{"order_id":123}}
+[404] [f0a1b2c3d5e6] 2024-08-04 18:08:00.000000 192.168.1.36 [ERROR] page_not_found [HTTP] [http://localhost/notfound] - GET -
+[200] [a5b6c7d8e9f0] 2024-08-04 18:08:05.000000 192.168.1.37 [INFO] session_start [HTTP] [http://localhost/session/start] - POST {"data":{"session_id":"abcd1234"}}
+[500] [b6c7d8e9f0a1] 2024-08-04 18:08:10.000000 192.168.1.38 [ERROR] session_error [HTTP] [http://localhost/session/start] (-) POST {"data":{"session_id":"abcd1234","error":"invalid session"}}
+[200] [c7d8e9f0a1b2] 2024-08-04 18:08:15.000000 192.168.1.39 [INFO] profile_view [HTTP] [http://localhost/profile/view?user=sam] (http://localhost/profile) GET {"data":{"user":"sam"}}
+[404] [d8e9f0a1b2c3] 2024-08-04 18:08:20.000000 192.168.1.40 [ERROR] not_found [HTTP] [http://localhost/404] - GET -
+[200] [e8f0a1b2c3d4] 2024-08-04 18:08:25.000000 192.168.1.41 [INFO] purchase [HTTP] [http://localhost/purchase] (http://localhost/cart) POST {"data":{"item":"laptop","quantity":1}}
+[200] [f0a1b2c3d4e5] 2024-08-04 18:08:30.000000 192.168.1.42 [INFO] logout [HTTP] [http://localhost/logout] (http://localhost/dashboard) GET -
+[200] [a6b7c8d9e0f1] 2024-08-04 18:08:35.000000 192.168.1.43 [INFO] api_call [HTTP] [http://localhost/api/data] - GET {"data":{"endpoint":"data","method":"GET"}}
+[200] [b7c8d9e0f1a2] 2024-08-04 18:08:40.000000 192.168.1.44 [INFO] user_activity [HTTP] [http://localhost/activity] - POST {"data":{"activity":"login","timestamp":"2024-08-04T18:08:40Z"}}
+[301] [c8d9e0ffc2b3] 2024-08-04 18:08:45.000000 192.168.1.45 [REDIRECT] redirection [HTTP] [http://localhost/r/fezoij] - GET -
+[404] [c8d9e0f1a2b3] 2024-08-04 18:08:45.000000 192.168.1.45 [ERROR] page_not_found [HTTP] [http://localhost/missingpage] - GET -
+[200] [d9e0f1a2b3c4] 2024-08-04 18:08:50.000000 192.168.1.46 [INFO] error_logs [HTTP] [http://localhost/errors] - GET -
+[500] [e0f1a2b3c4d5] 2024-08-04 18:08:55.000000 192.168.1.47 [ERROR] application_error [HTTP] [http://localhost/error] (-) DELETE {"data":{"log_id":456}}
+[200] [f0a1b2b3c4d6] 2024-08-04 18:09:00.000000 192.168.1.48 [INFO] settings_update [HTTP] [http://localhost/settings] - PUT {"data":{"theme":"dark","notifications":true}}
