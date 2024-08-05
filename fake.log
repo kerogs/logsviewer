@@ -10,12 +10,12 @@
 [200] [d4e5f7a1b2c4] 2024-08-04 18:05:50.000000 192.168.1.10 [INFO] search_results [HTTP] [http://localhost/search?q=php] (http://localhost/search) GET {"data":{"query":"php"}}
 [200] [e5f7a1b2c4d5] 2024-08-04 18:05:55.000000 192.168.1.11 [INFO] contact_form [HTTP] [http://localhost/contact] - POST {"data":{"name":"Bob","message":"Hello!"}}
 [401] [f7a1b2c4d5e6] 2024-08-04 18:06:00.000000 192.168.1.12 [ERROR] unauthorized [HTTP] [http://localhost/secure] (-) GET -
-[200] [a1b2c4d5e6f7] 2024-08-04 18:06:05.000000 192.168.1.13 [INFO] file_upload [HTTP] [http://localhost/upload] (http://localhost/dashboard) POST {"data":{"filename":"testfile.txt"}}
-[404] [b2c4d5e6f7a1] 2024-08-04 18:06:10.000000 192.168.1.14 [ERROR] resource_not_found [HTTP] [http://localhost/resource] - GET -
+[200] [a1b2c4d5e6f7] 2024-08-04 18:06:05.000000 192.168.1.13 [INFO] file_upload [HTTPS] [http://localhost/upload] (http://localhost/dashboard) POST {"data":{"filename":"testfile.txt"}}
+[404] [b2c4d5e6f7a1] 2024-08-04 18:06:10.000000 192.168.1.14 [ERROR] resource_not_found [HTTPS] [http://localhost/resource] - GET -
 [500] [c4d5e6f7a1b2] 2024-08-04 18:06:15.000000 192.168.1.15 [ERROR] critical_error [HTTP] [http://localhost/critical] (-) DELETE {"data":{"id":123}}
-[200] [d5e6f7a1b2c3] 2024-08-04 18:06:20.000000 192.168.1.16 [INFO] account_update [HTTP] [http://localhost/account] (http://localhost/dashboard) PUT {"data":{"username":"mary","email":"mary@example.com"}}
+[200] [d5e6f7a1b2c3] 2024-08-04 18:06:20.000000 192.168.1.16 [INFO] account_update [HTTPS] [http://localhost/account] (http://localhost/dashboard) PUT {"data":{"username":"mary","email":"mary@example.com"}}
 [200] [e6f7a1b2c3d4] 2024-08-04 18:06:25.000000 192.168.1.17 [INFO] admin_panel [HTTP] [http://localhost/admin] - GET -
-[403] [f7a1b2c3d4e5] 2024-08-04 18:06:30.000000 192.168.1.18 [ERROR] forbidden_action [HTTP] [http://localhost/admin/settings] (-) GET -
+[403] [f7a1b2c3d4e5] 2024-08-04 18:06:30.000000 192.168.1.18 [ERROR] forbidden_action [HTTPS] [http://localhost/admin/settings] (-) GET -
 [200] [a2b3c4d5e6f8] 2024-08-04 18:06:35.000000 192.168.1.19 [INFO] payment [HTTP] [http://localhost/payment] (http://localhost/orders) POST {"data":{"amount":150.00,"currency":"USD"}}
 [500] [b3c4d5e6f8a1] 2024-08-04 18:06:40.000000 192.168.1.20 [ERROR] transaction_error [HTTP] [http://localhost/payment] (-) POST {"data":{"amount":150.00,"currency":"USD","error":"transaction failed"}}
 [200] [c4d5e6f8a2b3] 2024-08-04 18:06:45.000000 192.168.1.21 [INFO] user_registration [HTTP] [http://localhost/register] (http://localhost/login) POST {"data":{"username":"newuser","password":"securepass"}}
@@ -42,7 +42,7 @@
 [200] [f0a1b2c3d4e5] 2024-08-04 18:08:30.000000 192.168.1.42 [INFO] logout [HTTP] [http://localhost/logout] (http://localhost/dashboard) GET -
 [200] [a6b7c8d9e0f1] 2024-08-04 18:08:35.000000 192.168.1.43 [INFO] api_call [HTTP] [http://localhost/api/data] - GET {"data":{"endpoint":"data","method":"GET"}}
 [200] [b7c8d9e0f1a2] 2024-08-04 18:08:40.000000 192.168.1.44 [INFO] user_activity [HTTP] [http://localhost/activity] - POST {"data":{"activity":"login","timestamp":"2024-08-04T18:08:40Z"}}
-[301] [c8d9e0ffc2b3] 2024-08-04 18:08:45.000000 192.168.1.45 [REDIRECT] redirection [HTTP] [http://localhost/r/fezoij] - GET -
+[301] [c8d9e0ffc2b3] 2024-08-04 18:08:45.000000 192.168.1.45 [STATUS] redirection [HTTP] [http://localhost/r/fezoij] - GET -
 [404] [c8d9e0f1a2b3] 2024-08-04 18:08:45.000000 192.168.1.45 [ERROR] page_not_found [HTTP] [http://localhost/missingpage] - GET -
 [200] [d9e0f1a2b3c4] 2024-08-04 18:08:50.000000 192.168.1.46 [INFO] error_logs [HTTP] [http://localhost/errors] - GET -
 [500] [e0f1a2b3c4d5] 2024-08-04 18:08:55.000000 192.168.1.47 [ERROR] application_error [HTTP] [http://localhost/error] (-) DELETE {"data":{"log_id":456}}

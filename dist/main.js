@@ -4,6 +4,7 @@ const result = document.getElementById('result');
 const historyLogs = document.getElementById('historyLogs');
 const nofiledetected = document.querySelectorAll('.nofiledetected');
 const informationLogs = document.querySelector('.informationLogs');
+const review = document.querySelector('.review ul');
 let logsArray = [];
 let pos = 0;
 fileInput.addEventListener('change', (event) => {
@@ -59,6 +60,22 @@ fileInput.addEventListener('change', (event) => {
                     else {
                         historyLogs.innerHTML += '<a href="?id=' + parts[1] + '"><div class="' + divclass + '"></div></a>';
                     }
+                    review.innerHTML += `
+                        <li>
+                            <div class="listinfo">
+                                <p><span class="httpcode ${divclass}">${parts[0]}</span></p>
+                                <p><span class="id">${parts[1]}</span></p>
+                                <p><span class="time"></span>${parts[2]}</p>
+                                <p><span class="ip">${parts[3]}</span></p>
+                                <p><span class="type ${parts[4]}">[${parts[4]}]</span></p>
+                                <p><span>${parts[5]}</span></p>
+                                <p><span class="${parts[6]}">${parts[6]}</span></p>
+                                <p><span><a href="${parts[7]}">${parts[7]}</a></span></p>
+                                <p id="getAcionSeeFullDATA"><span>${parts[9]}</span></p>
+                                <p id="actionFullDATA"><span>${parts[10]}</span></p>
+                            </div>
+                        </li>
+                    `;
                     pos++;
                 });
             }
@@ -147,6 +164,45 @@ historyLogs.addEventListener('mouseenter', (event) => {
         }
     }
 }, true);
+// function review(lines = []) {
+//     const result = document.querySelector('result') as HTMLDivElement;
+//     lines.forEach(line => {
+//         console.log("REVEIW -> OK -> " + line)
+//         const parts = cutLogsPart(line);
+//         console.log(parts);
+//         let status = parts[0];
+//         let divclass = "";
+//         if (status < 200) {
+//             divclass = "yellow";
+//         } else if (status < 300) {
+//             divclass = "green";
+//         } else if (status < 400) {
+//             divclass = "blue";
+//         } else if (status < 500) {
+//             divclass = "red";
+//         } else if (status < 600) {
+//             divclass = "purple";
+//         } else {
+//             divclass = "";
+//         }
+//         result.innerHTML += `
+//             <li>
+//                 <div class="listinfo">
+//                     <p><span class="httpcode red">404</span></p>
+//                     <p><span class="id">a1b2c3d4e5f6</span></p>
+//                     <p><span class="time"></span>2024-08-04 18:05:12</p>
+//                     <p><span class="ip">192.168.1.1</span></p>
+//                     <p><span class="type info">[INFO]</span></p>
+//                     <p><span>user_login</span></p>
+//                     <p><span class="http">HTTP</span></p>
+//                     <p><span><a href="http://localhost/login">http://localhost/login</a></span></p>
+//                     <p id="getAcionSeeFullDATA"><span>GET</span></p>
+//                     <p id="actionFullDATA"><span >{"data":{"username":"alice","password":"pass123"}</span></p>
+//                 </div>
+//             </li>
+//         `;
+//     });
+// }
 // Écouteur pour la sortie du survol
 historyLogs.addEventListener('mouseleave', (event) => {
     informationLogs.innerHTML = "";

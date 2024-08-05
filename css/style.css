@@ -186,4 +186,94 @@ header nav ul li b {
 }
 .history .informationLogs .type.purple {
   background-color: #d33682;
+}
+
+.review {
+  margin: 10px 0;
+  max-height: 600px;
+  overflow-y: scroll;
+}
+.review > ul {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.review > ul > li {
+  margin: 0 12px;
+  padding: 6px 12px;
+  background-color: #eaecf1;
+  border-radius: 9px;
+}
+.review > ul > li .listinfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+.review > ul > li .listinfo > p {
+  flex: 1;
+  text-align: center;
+}
+.review > ul > li .listinfo > p span.httpcode.blue {
+  background-color: #268bd2;
+  color: #ffffff;
+}
+.review > ul > li .listinfo > p span.httpcode.red {
+  background-color: #dc322f;
+  color: #ffffff;
+}
+.review > ul > li .listinfo > p span.httpcode.green {
+  background-color: #859900;
+  color: #ffffff;
+}
+.review > ul > li .listinfo > p span.httpcode.yellow {
+  background-color: #b58900;
+  color: #ffffff;
+}
+.review > ul > li .listinfo > p span.httpcode.purple {
+  background-color: #d33682;
+  color: #ffffff;
+}
+.review > ul > li .listinfo > p span.id {
+  color: #555;
+}
+.review > ul > li .listinfo > p span.ip {
+  color: #6c71c4;
+}
+.review > ul > li .listinfo > p span.type.INFO, .review > ul > li .listinfo > p span.type.NOTE {
+  color: #268bd2;
+}
+.review > ul > li .listinfo > p span.type.ERROR {
+  color: #dc322f;
+}
+.review > ul > li .listinfo > p span.type.WARNING {
+  color: #b58900;
+}
+.review > ul > li .listinfo > p span.type.DEBUG {
+  color: #d33682;
+}
+.review > ul > li .listinfo > p span.type.STATUS {
+  color: #859900;
+}
+.review > ul > li .listinfo > p span.HTTP {
+  color: #268bd2;
+}
+.review > ul > li .listinfo > p span.HTTPS {
+  color: #859900;
+}
+.review > ul > li .listinfo > p a {
+  color: #268bd2;
+}
+.review > ul > li .listinfo > p a:hover {
+  opacity: 0.7;
+}
+.review > ul > li .listinfo > p#getAcionSeeFullDATA {
+  cursor: pointer;
+}
+.review > ul > li .listinfo > p#actionFullDATA {
+  display: none;
+  max-width: 300px;
+  overflow-x: scroll;
 }/*# sourceMappingURL=style.css.map */

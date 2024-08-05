@@ -267,3 +267,116 @@ header {
         }
     }
 }
+
+.review {
+    margin: 10px 0;
+    max-height: 600px;
+    overflow-y: scroll;
+
+    >ul {
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+
+        >li {
+            margin: 0 12px;
+            padding: 6px 12px;
+            background-color: $background2;
+            border-radius: 9px;
+
+            .listinfo {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 5px;
+
+
+                >p {
+                    flex: 1;
+                    text-align: center;
+
+                    span.httpcode {
+                        &.blue {
+                            background-color: $blue;
+                            color: $background;
+                        }
+
+                        &.red {
+                            background-color: $red;
+                            color: $background;
+                        }
+
+                        &.green {
+                            background-color: $green;
+                            color: $background;
+                        }
+
+                        &.yellow {
+                            background-color: $yellow;
+                            color: $background;
+                        }
+
+                        &.purple {
+                            background-color: $purple;
+                            color: $background;
+                        }
+                    }
+
+                    span.id{
+                        color: $text2;
+                    }
+
+                    span.ip{
+                        color: $bright-purple;
+                    }
+
+                    span.type{
+                        &.INFO, &.NOTE{
+                            color: $blue;
+                        }
+                        &.ERROR{
+                            color: $red;
+                        }
+                        &.WARNING{
+                            color: $yellow;
+                        }
+                        &.DEBUG{
+                            color: $purple;
+                        }
+                        &.STATUS{
+                            color: $green;
+                        }
+                    }
+
+                    span.HTTP{
+                        color: $blue;
+                    }
+
+                    span.HTTPS{
+                        color: $green;
+                    }
+
+                    a{
+                        color: $blue;
+
+                        &:hover{
+                            opacity: .7;
+                        }
+                    }
+
+                    &#getAcionSeeFullDATA{
+                        cursor: pointer;
+                    }
+
+                    &#actionFullDATA{
+                        display: none;
+                        max-width: 300px;
+                        overflow-x: scroll;
+                    }
+                }
+            }
+        }
+    }
+}
