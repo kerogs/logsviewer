@@ -231,7 +231,6 @@ header {
                     }
                 }
 
-
             }
         }
 
@@ -268,113 +267,275 @@ header {
     }
 }
 
-.review {
+.reviewside {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+
     margin: 10px 0;
-    max-height: 600px;
-    overflow-y: scroll;
 
-    >ul {
-        padding: 0;
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        gap: 9px;
+    .showReview {
+        flex: 1;
+        background-color: $background2;
+        border-radius: 10px;
+        margin: 0 10px 0 0;
 
-        >li {
-            margin: 0 12px;
-            padding: 6px 12px;
-            background-color: $background2;
-            border-radius: 9px;
+        height: 350px;
+        overflow-y: auto;
 
-            .listinfo {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                gap: 5px;
+        display: grid;
+        grid-auto-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 5px;
+        grid-template-areas:
+            "httpcode id"
+            "date date"
+            "ip type"
+            "action https"
+            "url getpost"
+            "urlreal urlreal"
+            "data data";
+
+        >div {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        a{
+            color: $blue;
+        }
+
+        .httpcode {
+            grid-area: httpcode;
+
+            &.blue {
+                background-color: $blue;
+                color: $background;
+            }
+
+            &.red {
+                background-color: $red;
+                color: $background;
+            }
+
+            &.green {
+                background-color: $green;
+                color: $background;
+            }
+
+            &.yellow {
+                background-color: $yellow;
+                color: $background;
+            }
+
+            &.purple {
+                background-color: $purple;
+                color: $background;
+            }
+        }
+
+        .id {
+            grid-area: id;
+            color: $text2;
+        }
+
+        .date {
+            grid-area: date;
+            color: $bright-purple;
+        }
+
+        .ip {
+            grid-area: ip;
 
 
-                >p {
-                    flex: 1;
-                    text-align: center;
+        }
 
-                    span.httpcode {
-                        &.blue {
-                            background-color: $blue;
-                            color: $background;
+        .type {
+            grid-area: type;
+
+            &.INFO,
+            &.NOTE {
+                color: $blue;
+            }
+
+            &.ERROR {
+                color: $red;
+            }
+
+            &.WARNING {
+                color: $yellow;
+            }
+
+            &.DEBUG {
+                color: $purple;
+            }
+
+            &.STATUS {
+                color: $green;
+            }
+        }
+
+        .action {
+            grid-area: action;
+        }
+
+        .https {
+            grid-area: https;
+
+            &.HTTP {
+                color: $blue;
+            }
+
+            &.HTTPS {
+                color: $green;
+            }
+        }
+
+        .urlreal {
+            grid-area: urlreal;
+        }
+
+        .url {
+            grid-area: url;
+        }
+
+        .getpost {
+            grid-area: getpost;
+        }
+
+        .data {
+            grid-area: data;
+            color: $green;
+
+            pre{
+                overflow-x: auto;
+                width: 100%;
+                padding: 16px 0;
+            }
+        }
+    }
+
+    .review {
+        margin: 10px 0;
+        height: 330px;
+        overflow-y: scroll;
+        flex: 3;
+        cursor: pointer;
+
+        >ul {
+            padding: 0;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+
+            >li {
+                margin: 0 12px;
+                padding: 6px 12px;
+                background-color: $background2;
+                border-radius: 9px;
+
+                .listinfo {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    gap: 5px;
+
+
+                    >p {
+                        flex: 1;
+                        text-align: center;
+
+                        span.httpcode {
+                            &.blue {
+                                background-color: $blue;
+                                color: $background;
+                            }
+
+                            &.red {
+                                background-color: $red;
+                                color: $background;
+                            }
+
+                            &.green {
+                                background-color: $green;
+                                color: $background;
+                            }
+
+                            &.yellow {
+                                background-color: $yellow;
+                                color: $background;
+                            }
+
+                            &.purple {
+                                background-color: $purple;
+                                color: $background;
+                            }
                         }
 
-                        &.red {
-                            background-color: $red;
-                            color: $background;
+                        span.id {
+                            color: $text2;
                         }
 
-                        &.green {
-                            background-color: $green;
-                            color: $background;
+                        span.ip {
+                            color: $bright-purple;
                         }
 
-                        &.yellow {
-                            background-color: $yellow;
-                            color: $background;
+                        span.type {
+
+                            &.INFO,
+                            &.NOTE {
+                                color: $blue;
+                            }
+
+                            &.ERROR {
+                                color: $red;
+                            }
+
+                            &.WARNING {
+                                color: $yellow;
+                            }
+
+                            &.DEBUG {
+                                color: $purple;
+                            }
+
+                            &.STATUS {
+                                color: $green;
+                            }
                         }
 
-                        &.purple {
-                            background-color: $purple;
-                            color: $background;
-                        }
-                    }
-
-                    span.id{
-                        color: $text2;
-                    }
-
-                    span.ip{
-                        color: $bright-purple;
-                    }
-
-                    span.type{
-                        &.INFO, &.NOTE{
+                        span.HTTP {
                             color: $blue;
                         }
-                        &.ERROR{
-                            color: $red;
-                        }
-                        &.WARNING{
-                            color: $yellow;
-                        }
-                        &.DEBUG{
-                            color: $purple;
-                        }
-                        &.STATUS{
+
+                        span.HTTPS {
                             color: $green;
                         }
-                    }
 
-                    span.HTTP{
-                        color: $blue;
-                    }
+                        a {
+                            color: $blue;
 
-                    span.HTTPS{
-                        color: $green;
-                    }
+                            &:hover {
+                                opacity: .7;
+                            }
+                        }
 
-                    a{
-                        color: $blue;
+                        &#getAcionSeeFullDATA {
+                            cursor: pointer;
+                        }
 
-                        &:hover{
-                            opacity: .7;
+                        &#actionFullDATA {
+                            display: none;
+                            max-width: 300px;
+                            overflow-x: scroll;
                         }
                     }
+                }
 
-                    &#getAcionSeeFullDATA{
-                        cursor: pointer;
-                    }
-
-                    &#actionFullDATA{
-                        display: none;
-                        max-width: 300px;
-                        overflow-x: scroll;
-                    }
+                &:hover {
+                    background-color: darken($background2, 5%);
                 }
             }
         }

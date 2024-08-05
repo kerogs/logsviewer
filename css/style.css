@@ -188,92 +188,206 @@ header nav ul li b {
   background-color: #d33682;
 }
 
-.review {
+.reviewside {
+  display: flex;
+  gap: 10px;
+  width: 100%;
   margin: 10px 0;
-  max-height: 600px;
-  overflow-y: scroll;
 }
-.review > ul {
+.reviewside .showReview {
+  flex: 1;
+  background-color: #eaecf1;
+  border-radius: 10px;
+  margin: 0 10px 0 0;
+  height: 350px;
+  overflow-y: auto;
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 5px;
+  grid-template-areas: "httpcode id" "date date" "ip type" "action https" "url getpost" "urlreal urlreal" "data data";
+}
+.reviewside .showReview > div {
+  text-align: center;
+  margin: 10px 0;
+}
+.reviewside .showReview a {
+  color: #268bd2;
+}
+.reviewside .showReview .httpcode {
+  grid-area: httpcode;
+}
+.reviewside .showReview .httpcode.blue {
+  background-color: #268bd2;
+  color: #ffffff;
+}
+.reviewside .showReview .httpcode.red {
+  background-color: #dc322f;
+  color: #ffffff;
+}
+.reviewside .showReview .httpcode.green {
+  background-color: #859900;
+  color: #ffffff;
+}
+.reviewside .showReview .httpcode.yellow {
+  background-color: #b58900;
+  color: #ffffff;
+}
+.reviewside .showReview .httpcode.purple {
+  background-color: #d33682;
+  color: #ffffff;
+}
+.reviewside .showReview .id {
+  grid-area: id;
+  color: #555;
+}
+.reviewside .showReview .date {
+  grid-area: date;
+  color: #6c71c4;
+}
+.reviewside .showReview .ip {
+  grid-area: ip;
+}
+.reviewside .showReview .type {
+  grid-area: type;
+}
+.reviewside .showReview .type.INFO, .reviewside .showReview .type.NOTE {
+  color: #268bd2;
+}
+.reviewside .showReview .type.ERROR {
+  color: #dc322f;
+}
+.reviewside .showReview .type.WARNING {
+  color: #b58900;
+}
+.reviewside .showReview .type.DEBUG {
+  color: #d33682;
+}
+.reviewside .showReview .type.STATUS {
+  color: #859900;
+}
+.reviewside .showReview .action {
+  grid-area: action;
+}
+.reviewside .showReview .https {
+  grid-area: https;
+}
+.reviewside .showReview .https.HTTP {
+  color: #268bd2;
+}
+.reviewside .showReview .https.HTTPS {
+  color: #859900;
+}
+.reviewside .showReview .urlreal {
+  grid-area: urlreal;
+}
+.reviewside .showReview .url {
+  grid-area: url;
+}
+.reviewside .showReview .getpost {
+  grid-area: getpost;
+}
+.reviewside .showReview .data {
+  grid-area: data;
+  color: #859900;
+}
+.reviewside .showReview .data pre {
+  overflow-x: auto;
+  width: 100%;
+  padding: 16px 0;
+}
+.reviewside .review {
+  margin: 10px 0;
+  height: 330px;
+  overflow-y: scroll;
+  flex: 3;
+  cursor: pointer;
+}
+.reviewside .review > ul {
   padding: 0;
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 9px;
 }
-.review > ul > li {
+.reviewside .review > ul > li {
   margin: 0 12px;
   padding: 6px 12px;
   background-color: #eaecf1;
   border-radius: 9px;
 }
-.review > ul > li .listinfo {
+.reviewside .review > ul > li .listinfo {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 5px;
 }
-.review > ul > li .listinfo > p {
+.reviewside .review > ul > li .listinfo > p {
   flex: 1;
   text-align: center;
 }
-.review > ul > li .listinfo > p span.httpcode.blue {
+.reviewside .review > ul > li .listinfo > p span.httpcode.blue {
   background-color: #268bd2;
   color: #ffffff;
 }
-.review > ul > li .listinfo > p span.httpcode.red {
+.reviewside .review > ul > li .listinfo > p span.httpcode.red {
   background-color: #dc322f;
   color: #ffffff;
 }
-.review > ul > li .listinfo > p span.httpcode.green {
+.reviewside .review > ul > li .listinfo > p span.httpcode.green {
   background-color: #859900;
   color: #ffffff;
 }
-.review > ul > li .listinfo > p span.httpcode.yellow {
+.reviewside .review > ul > li .listinfo > p span.httpcode.yellow {
   background-color: #b58900;
   color: #ffffff;
 }
-.review > ul > li .listinfo > p span.httpcode.purple {
+.reviewside .review > ul > li .listinfo > p span.httpcode.purple {
   background-color: #d33682;
   color: #ffffff;
 }
-.review > ul > li .listinfo > p span.id {
+.reviewside .review > ul > li .listinfo > p span.id {
   color: #555;
 }
-.review > ul > li .listinfo > p span.ip {
+.reviewside .review > ul > li .listinfo > p span.ip {
   color: #6c71c4;
 }
-.review > ul > li .listinfo > p span.type.INFO, .review > ul > li .listinfo > p span.type.NOTE {
+.reviewside .review > ul > li .listinfo > p span.type.INFO, .reviewside .review > ul > li .listinfo > p span.type.NOTE {
   color: #268bd2;
 }
-.review > ul > li .listinfo > p span.type.ERROR {
+.reviewside .review > ul > li .listinfo > p span.type.ERROR {
   color: #dc322f;
 }
-.review > ul > li .listinfo > p span.type.WARNING {
+.reviewside .review > ul > li .listinfo > p span.type.WARNING {
   color: #b58900;
 }
-.review > ul > li .listinfo > p span.type.DEBUG {
+.reviewside .review > ul > li .listinfo > p span.type.DEBUG {
   color: #d33682;
 }
-.review > ul > li .listinfo > p span.type.STATUS {
+.reviewside .review > ul > li .listinfo > p span.type.STATUS {
   color: #859900;
 }
-.review > ul > li .listinfo > p span.HTTP {
+.reviewside .review > ul > li .listinfo > p span.HTTP {
   color: #268bd2;
 }
-.review > ul > li .listinfo > p span.HTTPS {
+.reviewside .review > ul > li .listinfo > p span.HTTPS {
   color: #859900;
 }
-.review > ul > li .listinfo > p a {
+.reviewside .review > ul > li .listinfo > p a {
   color: #268bd2;
 }
-.review > ul > li .listinfo > p a:hover {
+.reviewside .review > ul > li .listinfo > p a:hover {
   opacity: 0.7;
 }
-.review > ul > li .listinfo > p#getAcionSeeFullDATA {
+.reviewside .review > ul > li .listinfo > p#getAcionSeeFullDATA {
   cursor: pointer;
 }
-.review > ul > li .listinfo > p#actionFullDATA {
+.reviewside .review > ul > li .listinfo > p#actionFullDATA {
   display: none;
   max-width: 300px;
   overflow-x: scroll;
+}
+.reviewside .review > ul > li:hover {
+  background-color: #dbdee7;
 }/*# sourceMappingURL=style.css.map */

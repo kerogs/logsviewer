@@ -6,6 +6,7 @@ const historyLogs = document.getElementById('historyLogs') as HTMLElement;
 const nofiledetected = document.querySelectorAll('.nofiledetected');
 const informationLogs = document.querySelector('.informationLogs') as HTMLElement;
 const review = document.querySelector('.review ul') as HTMLDivElement;
+const reviewLogsLine = document.querySelectorAll(".reviewsLogsLine")
 let logsArray = [];
 let pos = 0;
 
@@ -65,7 +66,7 @@ fileInput.addEventListener('change', (event) => {
                     }
 
                     review.innerHTML += `
-                        <li>
+                        <li class="reviewsLogsLine" data-id="${parts[1]}">
                             <div class="listinfo">
                                 <p><span class="httpcode ${divclass}">${parts[0]}</span></p>
                                 <p><span class="id">${parts[1]}</span></p>
@@ -173,49 +174,61 @@ historyLogs.addEventListener('mouseenter', (event) => {
     }
 }, true);
 
-// function review(lines = []) {
-//     const result = document.querySelector('result') as HTMLDivElement;
+// ? all reviewsLogsLine clicked event
+const reviewDiv = document.querySelector('.review'); // Sélectionnez le bon conteneur parent
 
-//     lines.forEach(line => {
-//         console.log("REVEIW -> OK -> " + line)
-//         const parts = cutLogsPart(line);
-//         console.log(parts);
+reviewDiv.addEventListener('click', (event) => {
+    const target = event.target as HTMLElement;
 
-//         let status = parts[0];
-//         let divclass = "";
+    // Vérifiez si l'élément cliqué est un <li> dans la hiérarchie DOM
+    if (target.closest('li')) {
+        console.log("clicked line : ", target.closest('li'));
 
-//         if (status < 200) {
-//             divclass = "yellow";
-//         } else if (status < 300) {
-//             divclass = "green";
-//         } else if (status < 400) {
-//             divclass = "blue";
-//         } else if (status < 500) {
-//             divclass = "red";
-//         } else if (status < 600) {
-//             divclass = "purple";
-//         } else {
-//             divclass = "";
-//         }
+        const dataId = target.closest('li').getAttribute('data-id');
+        console.log("clicked line ID : ", dataId);
 
-//         result.innerHTML += `
-//             <li>
-//                 <div class="listinfo">
-//                     <p><span class="httpcode red">404</span></p>
-//                     <p><span class="id">a1b2c3d4e5f6</span></p>
-//                     <p><span class="time"></span>2024-08-04 18:05:12</p>
-//                     <p><span class="ip">192.168.1.1</span></p>
-//                     <p><span class="type info">[INFO]</span></p>
-//                     <p><span>user_login</span></p>
-//                     <p><span class="http">HTTP</span></p>
-//                     <p><span><a href="http://localhost/login">http://localhost/login</a></span></p>
-//                     <p id="getAcionSeeFullDATA"><span>GET</span></p>
-//                     <p id="actionFullDATA"><span >{"data":{"username":"alice","password":"pass123"}</span></p>
-//                 </div>
-//             </li>
-//         `;
-//     });
-// }
+        // ? Afficher dans .showReview
+        const showReview = document.querySelector('.showReview');
+
+        logsArray.forEach(element => {
+            if (element.includes(dataId)) {
+                const elementSplit = cutLogsPart(element);
+
+                const statuselement = elementSplit[0];
+                let divclass = "";
+
+                if (statuselement < 200) {
+                    divclass = "yellow";
+                } else if (statuselement < 300) {
+                    divclass = "green";
+                } else if (statuselement < 400) {
+                    divclass = "blue";
+                } else if (statuselement < 500) {
+                    divclass = "red";
+                } else if (statuselement < 600) {
+                    divclass = "purple";
+                } else {
+                    divclass = "";
+                }
+
+                showReview.innerHTML = `
+                    <div class="httpcode ${divclass}">${elementSplit[0]}</div>
+                    <div class="id">${elementSplit[1]}</div>
+                    <div class="date">${elementSplit[2]}</div>
+                    <div class="ip">${elementSplit[3]}</div>
+                    <div class="type ${elementSplit[4]}">${elementSplit[4]}</div>
+                    <div class="action">${elementSplit[5]}</div>
+                    <div class="https ${elementSplit[6]}">${elementSplit[6]}</div>
+                    <div class="urlreal"><a href="${elementSplit[7]}" target="_blank">${elementSplit[7]}</a></div>
+                    <div class="url"><a href="${elementSplit[8]}" target="_blank">${elementSplit[8]}</a></div>
+                    <div class="getpost">${elementSplit[9]}</div>
+                    <div class="data"><pre>${elementSplit[10]}</pre></div>
+                `;
+            }
+        });
+
+    }
+}, true);
 
 // Écouteur pour la sortie du survol
 historyLogs.addEventListener('mouseleave', (event) => {
